@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Don Leonard E. Estrera · Junior QA and Automation Engineer</title>
+<meta name="description" content="Resume of Don Leonard E. Estrera, a 2026 Computer Technology graduate in Cebu, Philippines, seeking junior QA and automation roles. Python and JavaScript, AI-assisted development, and detailed issue reports.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://dondon3109.online/">
+<style>
+:root {
+  --bg: #f7f8f7;
+  --surface: #ffffff;
+  --text: #1a2321;
+  --muted: #55625f;
+  --border: #d6dcda;
+  --accent: #0f766e;
+  --accent-bg: #e1f1ee;
+  --found: #9a3412;
+  --found-bg: #fdeee3;
+  --focus: #0f766e;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1413;
+    --surface: #151d1b;
+    --text: #e4ebe9;
+    --muted: #9aa8a4;
+    --border: #2b3835;
+    --accent: #5eead4;
+    --accent-bg: #153431;
+    --found: #fdba74;
+    --found-bg: #3a2414;
+    --focus: #5eead4;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.6 var(--font-sans);
+}
+.wrap { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1rem 3rem; }
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
+
+a { color: var(--accent); text-underline-offset: 0.2em; overflow-wrap: anywhere; }
+code { font-family: var(--font-mono); font-size: 0.9em; background: var(--accent-bg); padding: 0.1em 0.35em; border-radius: 3px; }
+
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 0.25rem; letter-spacing: -0.01em; }
+h2 {
+  font: 600 0.8rem/1.4 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+h3 { font-size: 1.05rem; line-height: 1.4; margin: 0 0 0.25rem; }
+p { margin: 0 0 1rem; }
+ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+li { margin-bottom: 0.4rem; }
+section { margin-top: 2.5rem; }
+
+.role { margin: 0 0 1rem; color: var(--muted); font-size: 1.1rem; }
+.meta { font: 0.85rem/1.4 var(--font-mono); color: var(--muted); margin: 0 0 0.75rem; }
+
+.pill {
+  display: inline-block;
+  font: 600 0.72rem/1 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+.pill.found { color: var(--found); background: var(--found-bg); }
+
+/* Contact */
+.contact { display: grid; gap: 0.5rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.contact li { display: grid; grid-template-columns: 4.5rem 1fr; gap: 0.75rem; align-items: center; margin: 0; }
+.contact .k { font: 0.75rem/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.contact .vals { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; min-width: 0; }
+.contact .v { overflow-wrap: anywhere; }
+.selectable { user-select: all; -webkit-user-select: all; }
+button.copy {
+  font: 600 0.75rem/1 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  min-height: 2.25rem;
+  cursor: pointer;
+}
+button.copy:hover { background: var(--accent-bg); }
+.copy-status { font: 0.8rem/1 var(--font-mono); color: var(--muted); }
+
+/* Bug report card */
+.ticket { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+.ticket-head { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 0.75rem; }
+.ticket-head .tag { font: 0.8rem/1 var(--font-mono); color: var(--muted); margin-right: auto; }
+.ticket h3 { font-size: 1.15rem; margin-bottom: 1rem; }
+.ticket dl { margin: 0; }
+.ticket .row { padding: 0.75rem 0; border-top: 1px solid var(--border); }
+.ticket dt { font: 600 0.72rem/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.25rem; }
+.ticket dd { margin: 0; }
+.ticket ol { margin: 0; padding-left: 1.2rem; }
+
+/* Entries */
+.entry { margin-bottom: 1.75rem; }
+.entry:last-child { margin-bottom: 0; }
+.entry-meta { font: 0.85rem/1.4 var(--font-mono); color: var(--muted); margin: 0; }
+
+/* Skills */
+.skills { margin: 0; }
+.skills div { padding: 0.75rem 0; border-top: 1px solid var(--border); }
+.skills div:first-child { border-top: 0; padding-top: 0; }
+.skills dt { font: 600 0.72rem/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.2rem; }
+.skills dd { margin: 0; }
+
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); font: 0.85rem/1.4 var(--font-mono); color: var(--muted); }
+
+@media (min-width: 40rem) {
+  .wrap { padding: 4rem 1.5rem 4rem; }
+  h1 { font-size: 2.5rem; }
+  .ticket { padding: 1.75rem; }
+  .ticket .row, .skills div { display: grid; grid-template-columns: 9.5rem 1fr; gap: 1rem; }
+  .ticket dt, .skills dt { margin: 0.2rem 0 0; }
+}
+
+@media print {
+  :root { --bg: #fff; --surface: #fff; --text: #000; --muted: #333; --border: #bbb; --accent: #0f766e; --accent-bg: #fff; --found: #9a3412; --found-bg: #fff; }
+  button.copy, .copy-status { display: none; }
+  .wrap { padding: 0; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Don Leonard E. Estrera</h1>
+  <p class="role">Junior QA and Automation Engineer · Cebu, Philippines</p>
+  <span class="pill">Available immediately · remote · any hours</span>
+  <ul class="contact">
+    <li>
+      <span class="k">Email</span>
+      <div class="vals">
+        <span class="v selectable" id="email">donestrera3109@gmail.com</span>
+        <button type="button" class="copy" id="copy-email" aria-label="Copy email address">Copy</button>
+        <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+      </div>
+    </li>
+    <li>
+      <span class="k">Phone</span>
+      <div class="vals"><span class="v selectable">0963-821-2584</span></div>
+    </li>
+    <li>
+      <span class="k">GitHub</span>
+      <div class="vals"><a class="v" href="https://github.com/Zoption3109/Budget-and-expense-analysis-tool">github.com/Zoption3109/Budget-and-expense-analysis-tool</a></div>
+    </li>
+  </ul>
+</header>
+
+<main>
+<section aria-labelledby="summary">
+  <h2 id="summary">Summary</h2>
+  <p>2026 Computer Technology graduate looking for a junior QA or automation role. I build and test full-stack web apps with Python and JavaScript, use AI coding tools such as Claude and Codex every day, and review and test everything they generate before it ships. I write issue reports with enough detail for a developer to act on without asking.</p>
+</section>
+
+<section aria-labelledby="bug">
+  <h2 id="bug">Sample bug report</h2>
+  <article class="ticket">
+    <div class="ticket-head">
+      <span class="tag">ZOP · subscriptions</span>
+      <span class="pill found">Found</span>
+      <span class="pill">Fixed</span>
+    </div>
+    <h3>Reactivating a canceled subscription charges every missed billing cycle</h3>
+    <dl>
+      <div class="row">
+        <dt>Steps</dt>
+        <dd>
+          <ol>
+            <li>Create a monthly subscription with a July billing date and cancel it.</li>
+            <li>Freeze the clock in late September.</li>
+            <li>Reactivate the subscription and run the renewal sweep.</li>
+          </ol>
+        </dd>
+      </div>
+      <div class="row">
+        <dt>Expected</dt>
+        <dd>One charge for the latest cycle that is due.</dd>
+      </div>
+      <div class="row">
+        <dt>Actual</dt>
+        <dd>A charge for every cycle missed while the subscription was canceled.</dd>
+      </div>
+      <div class="row">
+        <dt>Reproduced by</dt>
+        <dd>A failing API test following the steps above.</dd>
+      </div>
+      <div class="row">
+        <dt>Fix</dt>
+        <dd>On reactivation, move the billing date to the latest cycle already due, using a small shared date helper.</dd>
+      </div>
+      <div class="row">
+        <dt>Verified</dt>
+        <dd>The same test now asserts exactly one charge dated 2026-09-23 and the next billing date moving to 2026-10-23. I added a unit test on the helper and ran the full <code>pnpm verify</code> to check for regressions.</dd>
+      </div>
+    </dl>
+  </article>
+</section>
+
+<section aria-labelledby="projects">
+  <h2 id="projects">Projects</h2>
+  <article class="entry">
+    <h3>Zoption: budget and expense analysis web app</h3>
+    <p class="entry-meta">Personal project, 2026</p>
+    <ul>
+      <li>Built a full-stack budgeting app that turns imported or manual transactions into spending trends, category breakdowns, income versus expenses and budget progress, with CSV import and export.</li>
+      <li>Built the API on Cloudflare Workers with Supabase authentication, server-side JWT verification and fail-closed protected routes, so unauthenticated requests are rejected by default.</li>
+      <li>Managed the database with tracked Supabase migrations, Cloudflare D1 and per-user storage policies for private uploads.</li>
+      <li>Integrated an AI financial assistant using the DeepSeek API.</li>
+      <li>Worked AI-first: split each feature into small work items, guided AI coding tools through the build, then reviewed and tested the generated code before calling it done.</li>
+    </ul>
+  </article>
+  <article class="entry">
+    <h3>IoT alarm security system using deep learning</h3>
+    <p class="entry-meta">Student researcher, Sep 2024 – May 2025</p>
+    <ul>
+      <li>Led a multi-month research project from planning to completion, coordinating tasks and documentation across the timeline.</li>
+      <li>Built a React and Django monitoring dashboard fed by Arduino fire, smoke, motion and humidity sensors, with YOLOv7 real-time object detection.</li>
+      <li>Prepared and maintained project documentation and testing records.</li>
+    </ul>
+  </article>
+</section>
+
+<section aria-labelledby="experience">
+  <h2 id="experience">Experience</h2>
+  <article class="entry">
+    <h3>IT support intern</h3>
+    <p class="entry-meta">Toyota Mandaue South, Cebu</p>
+    <ul>
+      <li>Troubleshot PC, printer, telephone and internet issues and reported problems with enough detail for the team to act.</li>
+      <li>Verified account details before granting SAP user access, following written procedures.</li>
+      <li>Installed and configured antivirus and enterprise software on company workstations, and built and deployed workstations.</li>
+      <li>Deployed wireless access points, traced LAN ports and terminated Cat6 cables, and monitored CCTV and UPS systems.</li>
+    </ul>
+  </article>
+</section>
+
+<section aria-labelledby="skills">
+  <h2 id="skills">Skills</h2>
+  <dl class="skills">
+    <div>
+      <dt>Testing and quality</dt>
+      <dd>Reviewing and testing AI-generated code, checking features against requirements, clear issue reports, test documentation and testing records</dd>
+    </div>
+    <div>
+      <dt>AI-assisted work</dt>
+      <dd>Claude and Codex, small work items, verifying output, LLM API integration (DeepSeek)</dd>
+    </div>
+    <div>
+      <dt>Programming</dt>
+      <dd>Python (Django), JavaScript (React), REST APIs</dd>
+    </div>
+    <div>
+      <dt>Backend and data</dt>
+      <dd>Supabase (auth, migrations, storage policies), Cloudflare Workers and D1, pnpm monorepos, Git and GitHub</dd>
+    </div>
+    <div>
+      <dt>Systems and support</dt>
+      <dd>PC, printer, telephone, wireless access point and LAN troubleshooting, Windows setup, Google Workspace, Microsoft Word and Excel</dd>
+    </div>
+    <div>
+      <dt>Working style</dt>
+      <dd>Follows written procedures, documents solutions, clear written English, works independently and meets deadlines</dd>
+    </div>
+  </dl>
+</section>
+
+<section aria-labelledby="education">
+  <h2 id="education">Education</h2>
+  <article class="entry">
+    <h3>Bachelor of Industrial Technology, major in Computer Technology</h3>
+    <p class="entry-meta">Cebu Technological University – San Francisco, 2021 – 2026</p>
+  </article>
+  <p><span class="entry-meta">Languages:</span> English (professional written and spoken), Filipino, Cebuano</p>
+</section>
+</main>
+
+<footer>Don Leonard E. Estrera · Cebu, Philippines</footer>
+
+</div>
+
+<script>
+// Copies the email via the Clipboard API; if that is unavailable or rejected,
+// selects the text so the user can copy it manually.
+(function () {
+  var emailEl = document.getElementById('email');
+  var status = document.getElementById('copy-status');
+  var timer;
+
+  function say(msg) {
+    status.textContent = msg;
+    clearTimeout(timer);
+    timer = setTimeout(function () { status.textContent = ''; }, 3000);
+  }
+
+  function selectEmail() {
+    var range = document.createRange();
+    range.selectNodeContents(emailEl);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+
+  function fallback() {
+    selectEmail();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    say(ok ? 'Copied' : 'Selected: press Ctrl+C or Cmd+C');
+  }
+
+  document.getElementById('copy-email').addEventListener('click', function () {
+    var text = emailEl.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { say('Copied'); }, fallback);
+    } else {
+      fallback();
+    }
+  });
+})();
+</script>
+</body>
+</html>
